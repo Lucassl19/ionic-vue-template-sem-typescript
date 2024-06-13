@@ -25,7 +25,7 @@
 <script>
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/vue';
 import { mapGetters } from 'vuex';
-
+import { Capacitor } from '@capacitor/core';
 export default {
   components: { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton },
   data() {
@@ -37,7 +37,7 @@ export default {
     ...mapGetters(['getMsg'])
   },
   mounted() {
-    console.log('HomePage mounted');
+    console.log(Capacitor);
   }
 };
 
