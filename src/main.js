@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import store from './store/index';
 import App from './App.vue'
 import router from './router';
 
@@ -35,6 +36,7 @@ import '@ionic/vue/css/palettes/dark.system.css';
 import './theme/variables.css';
 
 const app = createApp(App)
+  .use(store)
   .use(IonicVue)
   .use(router);
 

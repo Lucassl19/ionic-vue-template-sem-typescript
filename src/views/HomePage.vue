@@ -2,7 +2,7 @@
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar>
-        <ion-title>Blank</ion-title>
+        <ion-title>{{ getMsg }}</ion-title>
       </ion-toolbar>
     </ion-header>
 
@@ -15,14 +15,36 @@
 
       <div id="container">
         <strong>Ready to create an app?</strong>
+        <ion-button @click="$router.push('/list')">Teste</ion-button>
         <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
       </div>
     </ion-content>
   </ion-page>
 </template>
 
-<script setup lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+<script>
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/vue';
+import { mapGetters } from 'vuex';
+
+export default {
+  components: { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton },
+  data() {
+    return {
+      msg: '----------------- Vue 3 + Vite + Ionic Vue',
+    }
+  },
+  computed: {
+    ...mapGetters(['getMsg'])
+  },
+  mounted() {
+    console.log('HomePage mounted');
+  }
+};
+
+</script>
+
+<script>
+
 </script>
 
 <style scoped>
